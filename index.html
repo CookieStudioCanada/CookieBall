@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Cookie Ball</title>
+</head>
+
+<h1>Cookie Ball</h2>
+<body>
+
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'London')">Home</button>
+      <button class="tablinks" onclick="openCity(event, 'Paris')">Lineup</button>
+      <button class="tablinks" onclick="openCity(event, 'Tokyo')">Classement</button>
+      <button class="tablinks" onclick="openCity(event, 'Play')">Play</button>
+    </div>
+    
+    <div id="London" class="tabcontent">
+      <h3>Home</h3>
+      <label>Enter your team name:</label>
+        <input type="text" id="myText">
+        <button type="button" id="myButton">OK!</button>
+        <br>        
+    
+        <h3>Team info</h3>
+        <p id="parag1"></p>
+
+        <h3>Jour</h3>
+        <p id="jour"></p>
+
+        
+        <br>
+    </div>
+    
+    <div id="Paris" class="tabcontent">
+        <h3>Lineup</h3>
+        <p>Please choose a team</p>
+        <button type="button" id="myTeamA">Team A</button>
+        <button type="button" id="myTeamB">Team B</button>
+        <p id="lineup" ></p>
+        <br>
+    </div>
+    
+    <div id="Tokyo" class="tabcontent">
+      <h3>Classement</h3>
+      <table>
+        <tr>
+          <th>Team</th>
+          <th>Wins</th>
+        </tr>
+        <tr>
+          <td>Team A</td>
+          <td id="TeamAWinNumber"></td>
+        </tr>
+        <tr>
+          <td>Team B</td>
+          <td id="TeamBWinNumber"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="Play" class="tabcontent">
+        <h3>Play</h3>
+        <button type="button" id="gameTime">Play!</button>
+        <p id="gameResult"></p>
+      </div>
+
+</body>
+<script src="index.js"></script>
+</html>
