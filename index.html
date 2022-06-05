@@ -9,64 +9,71 @@
 </head>
 
 <h1>Cookie Ball</h2>
+
 <body>
 
-    <div class="tab">
-      <button class="tablinks" onclick="openCity(event, 'London')">Home</button>
-      <button class="tablinks" onclick="openCity(event, 'Paris')">Lineup</button>
-      <button class="tablinks" onclick="openCity(event, 'Tokyo')">Classement</button>
-      <button class="tablinks" onclick="openCity(event, 'Play')">Play</button>
-    </div>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Home')">Home</button>
+    <button class="tablinks" onclick="openCity(event, 'Rosters')">Rosters</button>
+    <button class="tablinks" onclick="openCity(event, 'Standing')">Standing</button>
+    <button class="tablinks" onclick="openCity(event, 'Autres')">Autres</button>
+    <button class="tablinks" onclick="openCity(event, 'Settings')">Settings</button>
+  </div>
     
-    <div id="London" class="tabcontent">
-      <h3>Home</h3>
-      <label>Enter your team name:</label>
-        <input type="text" id="myText">
-        <button type="button" id="myButton">OK!</button>
-        <br>        
-    
-        <h3>Team info</h3>
-        <p id="parag1"></p>
+  <div id="Home" class="tabcontent">
+    <h1>Home</h1>    
 
-        <h3>Jour</h3>
-        <p id="jour"></p>
+    <h3>Team info</h3>
+    <p id="teamName">Cobras</p>
 
-        
-        <br>
-    </div>
-    
-    <div id="Paris" class="tabcontent">
-        <h3>Lineup</h3>
-        <p>Please choose a team</p>
-        <button type="button" id="myTeamA">Team A</button>
-        <button type="button" id="myTeamB">Team B</button>
-        <p id="lineup" ></p>
-        <br>
-    </div>
-    
-    <div id="Tokyo" class="tabcontent">
-      <h3>Classement</h3>
-      <table>
-        <tr>
-          <th>Team</th>
-          <th>Wins</th>
-        </tr>
-        <tr>
-          <td>Team A</td>
-          <td id="TeamAWinNumber"></td>
-        </tr>
-        <tr>
-          <td>Team B</td>
-          <td id="TeamBWinNumber"></td>
-        </tr>
-      </table>
-    </div>
+    <h3>Day</h3>
+    <p id="day">1</p>      
 
-    <div id="Play" class="tabcontent">
-        <h3>Play</h3>
-        <button type="button" id="gameTime">Play!</button>
-        <p id="gameResult"></p>
-      </div>
+    <h3>Sim a day</h3>
+    <button type="button" id="gameTime">Simulate</button>
+    <p id="gameResult"></p>
+
+  </div>
+    
+  <div id="Rosters" class="tabcontent">
+    <h1>Rosters</h1>
+    <p>Please choose a team</p>
+    <button type="button" id="myTeamA">Team A</button>
+    <button type="button" id="myTeamB">Team B</button>
+    <p id="lineup" ></p>
+    <br>
+  </div>
+    
+  <div id="Standing" class="tabcontent">
+    <h1>Standing</h1>
+    
+    <table id="standingTable">
+      <tr>
+        <th>Team</th>
+        <th>Wins</th>
+      </tr>
+      <tr>
+        <td>Team A</td>
+        <td id="TeamAWinNumber"></td>
+      </tr>
+      <tr>
+        <td>Team B</td>
+        <td id="TeamBWinNumber"></td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="Autres" class="tabcontent">
+    <h1>Autres</h1>
+  </div>
+
+  <div id="Settings" class="tabcontent">
+    <h1>Settings</h1>  
+    <label>Enter your team name:</label>
+    <input type="text" id="myTeamName">
+    <button type="button" id="changeNameButton">Change name</button>
+    <br>   
+  </div>
 
 </body>
 <script src="index.js"></script>
