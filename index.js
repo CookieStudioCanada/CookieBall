@@ -4,55 +4,40 @@ var teamAWin = 0;
 var teamBWin = 0;
 var day = 1;
 
-// Team A Roster
-let playerCteamA;
-let playerSFteamA;
-let playerPFteamA;
-let playerSGteamA;
-let playerPGteamA;
-
-// Team B Roster
-let playerCteamB;
-let playerSFteamB;
-let playerPFteamB;
-let playerSGteamB;
-let playerPGteamB;
-
-let teamARoster = [playerCteamA, playerSFteamA, playerPFteamA, playerSGteamA, playerPGteamA];
-let teamBRoster = [playerCteamB, playerSFteamB, playerPFteamB, playerSGteamB, playerPGteamB];
-
-function gameplay(){
-    
-    if (day < 21) {
-    
-    let a = Math.floor(Math.random() * 50);
-    let b = Math.floor(Math.random() * 50);
-    console.log(a, b);
-    
-    if (a > b) 
-         {
-            teamAWin += 1;
-            document.getElementById("gameResult").innerHTML = "Game " + day + " : Team A = " + a + " Team B = " + b;
-            day += 1;
-            document.getElementById("TeamAWinNumber").innerHTML = teamAWin;
-            document.getElementById("day").innerHTML = day;
-        }
-    else if (b > a) 
-        {
-            teamBWin += 1;
-            document.getElementById("gameResult").innerHTML = "Game " + day + " : Team A = " + a + " Team B = " + b;
-            day += 1;
-            document.getElementById("TeamBWinNumber").innerHTML = teamBWin;
-            document.getElementById("day").innerHTML = day;
-        }
-    else {
-        console.log("Tie game.");
-        day += 1;
-        document.getElementById("day").innerHTML = day;
+// Player Class
+class Player {
+    constructor(name, overall) {
+      this.name = name;
+      this.overall = overall;
     }
-    } else console.log("You cant play anymore. Season over.");
+  }
 
-}
+// List of players
+let lebronJamesID = new Player("L.James", 89); // fonctionne, mais n'est pas en string pour l'affichage...
+let stephCurryID = new Player("S.Curry", 91);
+let nikolaJokicID = new Player("N.Jokic", 92);
+let giannisAntetokounmpoID = new Player("G.Antetokounmpo", 91);
+let jamesHardenID = new Player("J.Harden", 88);
+
+// Team A Initial Roster
+let peterSeersID = new Player("P.Seers", 68);
+let esteRousseauID = new Player("E.Rousseau", 67);
+let vincentLallierID = new Player("V.L'Allier", 60);
+let julienOstiguyID = new Player("J.Ostiguy", 72);
+let jeromeSimardID = new Player("J.Simard", 55);
+
+// Team B Initial Roster
+let jayBarriaultID = new Player("J.Barriault", 73);
+let cedRondeauID = new Player("C.Rondeau", 64);
+let alexandreLaroseID = new Player("A.Larose", 65);
+let patrickPouliotID = new Player("P.Pouliot", 63);
+let valRoyID = new Player("V.Roy", 66);
+
+// array of player by team. Not working now.
+let teamARoster = [peterSeersID, esteRousseauID, vincentLallierID, julienOstiguyID, jeromeSimardID];
+let teamBRoster = [jayBarriaultID, cedRondeauID, alexandreLaroseID, patrickPouliotID, valRoyID];
+
+// buttons logic
 
 document.getElementById("changeNameButton").onclick = function(){
     myName = document.getElementById("myTeamName").value;
@@ -60,35 +45,37 @@ document.getElementById("changeNameButton").onclick = function(){
 }
 
 document.getElementById("myTeamA").onclick = function(){
-    document.getElementById("lineup").innerHTML = "Team A players : " + teamARoster;
-    console.log(teamARoster);
-}
+    
+    let teamARosterListName = teamARoster.map((ov) => {
+        return ov.name
+        })
+        
+        document.getElementById("lineup").innerHTML = teamARosterListName;
+    }
 
 document.getElementById("myTeamB").onclick = function(){
-    document.getElementById("lineup").innerHTML = "Team B players : " + teamBRoster;
-}
+
+    let teamBRosterListName = teamBRoster.map((ov) => {
+        return ov.name
+        })
+        
+        document.getElementById("lineup").innerHTML = teamBRosterListName;
+    }
 
 document.getElementById("gameTime").onclick = function(){
     gameplay();
 }
 
-function openCity(evt, cityName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-  
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+// Average Overall function
+
+function teamAverage(array){
+    let average = 0
+
+    for (let i = 0; i < 5; i++){ // array.lenght not working...
+        let currentNum = array[i];
+        average += currentNum;
     }
-  
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-  
-    // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
+
+    average = average /5; // array.lenght not working...
+    return average;
+}
