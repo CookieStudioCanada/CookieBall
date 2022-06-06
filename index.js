@@ -1,37 +1,43 @@
 // Game Data
 var myName;
 var teamAWin = 0;
+var teamALose = 0;
+var teamATie = 0;
 var teamBWin = 0;
+var teamBLose = 0;
+var teamBTie = 0;
 var day = 1;
 
 // Player Class
 class Player {
-    constructor(name, overall) {
+    constructor(name, overall, contract, yearLeft) {
       this.name = name;
       this.overall = overall;
+      this.contract = contract;
+      this.yearLeft = yearLeft;
     }
   }
 
 // List of players
-let lebronJamesID = new Player("L.James", 89); // fonctionne, mais n'est pas en string pour l'affichage...
-let stephCurryID = new Player("S.Curry", 91);
-let nikolaJokicID = new Player("N.Jokic", 92);
-let giannisAntetokounmpoID = new Player("G.Antetokounmpo", 91);
-let jamesHardenID = new Player("J.Harden", 88);
+let lebronJamesID = new Player("L.James", 89, 5000000, 1);
+let stephCurryID = new Player("S.Curry", 91, 5000000, 1);
+let nikolaJokicID = new Player("N.Jokic", 92, 5000000, 1);
+let giannisAntetokounmpoID = new Player("G.Antetokounmpo", 91, 5000000, 1);
+let jamesHardenID = new Player("J.Harden", 88, 5000000, 1);
 
 // Team A Initial Roster
-let peterSeersID = new Player("P.Seers", 68);
-let esteRousseauID = new Player("E.Rousseau", 67);
-let vincentLallierID = new Player("V.L'Allier", 60);
-let julienOstiguyID = new Player("J.Ostiguy", 72);
-let jeromeSimardID = new Player("J.Simard", 55);
+let peterSeersID = new Player("P.Seers", 68, 1000000, 1);
+let esteRousseauID = new Player("E.Rousseau", 67, 1000000, 1);
+let vincentLallierID = new Player("V.L'Allier", 60, 1000000, 1);
+let julienOstiguyID = new Player("J.Ostiguy", 72, 1000000, 1);
+let jeromeSimardID = new Player("J.Simard", 55, 1000000, 1);
 
 // Team B Initial Roster
-let jayBarriaultID = new Player("J.Barriault", 73);
-let cedRondeauID = new Player("C.Rondeau", 64);
-let alexandreLaroseID = new Player("A.Larose", 65);
-let patrickPouliotID = new Player("P.Pouliot", 63);
-let valRoyID = new Player("V.Roy", 66);
+let jayBarriaultID = new Player("J.Barriault", 73, 1000000, 1);
+let cedRondeauID = new Player("C.Rondeau", 64, 1000000, 1);
+let alexandreLaroseID = new Player("A.Larose", 65, 1000000, 1);
+let patrickPouliotID = new Player("P.Pouliot", 63, 1000000, 1);
+let valRoyID = new Player("V.Roy", 66, 1000000, 1);
 
 // array of player by team. Not working now.
 let teamARoster = [peterSeersID, esteRousseauID, vincentLallierID, julienOstiguyID, jeromeSimardID];
