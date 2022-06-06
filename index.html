@@ -16,7 +16,7 @@
     <button class="tablinks" onclick="openCity(event, 'Home')">Home</button>
     <button class="tablinks" onclick="openCity(event, 'Rosters')">Rosters</button>
     <button class="tablinks" onclick="openCity(event, 'Standing')">Standing</button>
-    <button class="tablinks" onclick="openCity(event, 'Autres')">Autres</button>
+    <button class="tablinks" onclick="openCity(event, 'FreeAgents')">Free Agents</button>
     <button class="tablinks" onclick="openCity(event, 'Settings')">Settings</button>
   </div>
     
@@ -32,7 +32,6 @@
     <h3>Sim a day</h3>
     <button type="button" id="gameTime">Simulate</button>
     <p id="gameResult"></p>
-
   </div>
     
   <div id="Rosters" class="tabcontent">
@@ -63,8 +62,16 @@
     </table>
   </div>
 
-  <div id="Autres" class="tabcontent">
-    <h1>Autres</h1>
+  <div id="FreeAgents" class="tabcontent">
+    <h1>Free Agents</h1>
+
+    <h3>List of players</h3>
+    Lebron James <button type="button" id="lebronJames">Add to team</button><br>
+    Steph Curry <button type="button" id="stephCurry">Add to team</button><br>
+    Nikola Jokic <button type="button" id="nikolaJokic">Add to team</button><br>
+    Giannis Antetokounmpo <button type="button" id="giannisAntetokounmpo">Add to team</button><br>
+    James Harden <button type="button" id="jamesHarden">Add to team</button><br>
+
   </div>
 
   <div id="Settings" class="tabcontent">
@@ -77,4 +84,7 @@
 
 </body>
 <script src="index.js"></script>
+<script src="freeagents.js"></script>
+<script src="tabs.js"></script>
+<script src="gameplay.js"></script>
 </html>
