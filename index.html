@@ -32,6 +32,11 @@
     <h3>Sim a day</h3>
     <button type="button" id="gameTime">Simulate</button>
     <p id="gameResult"></p>
+
+    <h3>Mass</h3>
+    <button type="button" id="salaryCapBTN">Salary Cap</button>
+    <p id="massText">5000000$</p>
+
   </div>
     
   <div id="Rosters" class="tabcontent">
@@ -41,6 +46,49 @@
     <button type="button" id="myTeamB">Team B</button>
     <p id="lineup" ></p>
     <br>
+
+    <table id="tableLineup">
+      <tr>
+        <th>Player</th>
+        <th>Overall</th>
+        <th>Contract</th>
+        <th>Years left</th>
+      </tr>
+      <tr>
+        <td id="Player0Name" >name</td>
+        <td id="Player0OV">overall</td>
+        <td id="Player0Contract" >contract</td>
+        <td id="Player0YL">yl</td>
+      </tr>
+      <tr>
+        <td id="Player1Name" >name</td>
+        <td id="Player1OV">overall</td>
+        <td id="Player1Contract" >contract</td>
+        <td id="Player1YL">yl</td>
+      </tr>
+      <tr>
+        <td id="Player2Name" >name</td>
+        <td id="Player2OV">overall</td>
+        <td id="Player2Contract" >contract</td>
+        <td id="Player2YL">yl</td>
+      </tr>
+      <tr>
+        <td id="Player3Name" >name</td>
+        <td id="Player3OV">overall</td>
+        <td id="Player3Contract" >contract</td>
+        <td id="Player3YL">yl</td>
+      </tr>
+      <tr>
+        <td id="Player4Name" >name</td>
+        <td id="Player4OV">overall</td>
+        <td id="Player4Contract" >contract</td>
+        <td id="Player4YL">yl</td>
+      </tr>
+    </table>
+    
+    <br>
+    <button type="button" id="updateTableBTN">Update Table</button>
+
   </div>
     
   <div id="Standing" class="tabcontent">
@@ -50,14 +98,20 @@
       <tr>
         <th>Team</th>
         <th>Wins</th>
+        <th>Loses</th>
+        <th>Ties</th>
       </tr>
       <tr>
         <td>Team A</td>
-        <td id="TeamAWinNumber"></td>
+        <td id="TeamAWinNumber">0</td>
+        <td id="TeamALoseNumber">0</td>
+        <td id="TeamATieNumber">0</td>
       </tr>
       <tr>
         <td>Team B</td>
-        <td id="TeamBWinNumber"></td>
+        <td id="TeamBWinNumber">0</td>
+        <td id="TeamBLoseNumber">0</td>
+        <td id="TeamBTieNumber">0</td>
       </tr>
     </table>
   </div>
@@ -87,4 +141,6 @@
 <script src="freeagents.js"></script>
 <script src="tabs.js"></script>
 <script src="gameplay.js"></script>
+<script src="salaryCapManager.js"></script>
+<script src="rosters.js"></script>
 </html>
